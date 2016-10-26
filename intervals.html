@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Random elements selector">
+    <meta name="author" content="Alex Nelson">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>Intervals quiz</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,54 +24,31 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <body>
 
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Project name</h3>
-      </div>
-
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+        <h2>Intervals quiz</h2>
+        <p class="lead">Click the button for the next interval.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button" id="button_one">Next</a></p>
+        <noscript>
+          <p><strong>Javascript must be enabled.</strong></p>
+        </noscript>
+        <p>&nbsp;</p>
+        <p>
+          <span id="span_note">&nbsp;</span>
+          <span id="span_interval">&nbsp;</span>
+          <span id="span_direction">&nbsp;</span>
+        </p>
       </div>
 
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>Developed from <a href="https://getbootstrap.com/examples/jumbotron-narrow/">a template page</a> c/o <a href="https://getbootstrap.com/">Bootstrap</a>, originally released under MIT license.</p>
+        <!-- CC template code c/o https://creativecommons.org/choose/ -->
+        <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This derivative work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
       </footer>
 
     </div> <!-- /container -->
@@ -79,5 +56,36 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Load JQuery to support Bootstrap, following example of https://getbootstrap.com/javascript/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      var notes = [
+        "Ab", "Bb", "Cb", "Db", "Eb", "Fb", "Gb",
+        "A", "B", "C", "D", "E", "F", "G",
+        "A#", "B#", "C#", "D#", "E#", "F#", "G#"
+      ];
+      var intervals = [
+        "P4", "P5"
+        //TODO etc
+      ];
+      var directions = [
+        "Up", "Down"
+      ];
+
+      //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
+      $("#button_one").on("click", function (e) {
+          e.preventDefault();
+          //Random element code c/o https://stackoverflow.com/a/4550514
+          var note = notes [Math.floor(Math.random() * notes.length)];
+          var interval = intervals [Math.floor(Math.random() * intervals.length)];
+          var direction = directions [Math.floor(Math.random() * directions.length)];
+
+          document.getElementById("span_note").innerHTML = note;
+          document.getElementById("span_interval").innerHTML = interval;
+          document.getElementById("span_direction").innerHTML = direction;
+      });
+    </script>
   </body>
 </html>
