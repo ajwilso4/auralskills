@@ -40,8 +40,7 @@
         <p>&nbsp;</p>
         <p>
           <span id="span_note">&nbsp;</span>
-          <span id="span_interval">&nbsp;</span>
-          <span id="span_direction">&nbsp;</span>
+          <span id="span_triad">&nbsp;</span>
         </p>
       </div>
 
@@ -66,12 +65,9 @@
         "A", "B", "C", "D", "E", "F", "G",
        "B#", "C#", "D#", "F#", "G#"
       ];
-      var intervals = [
-        "P4", "P5", "m2", "M2", "m3", "M3", "TT", "m6", "M6", "m7", "M7"
+      var triad = [
+        "Major", "Minor", "Diminished", "Augmented"
         //TODO etc
-      ];
-      var directions = [
-        "Up", "Down"
       ];
 
       //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
@@ -79,12 +75,10 @@
           e.preventDefault();
           //Random element code c/o https://stackoverflow.com/a/4550514
           var note = notes [Math.floor(Math.random() * notes.length)];
-          var interval = intervals [Math.floor(Math.random() * intervals.length)];
-          var direction = directions [Math.floor(Math.random() * directions.length)];
+          var triad = triad [Math.floor(Math.random() * triad.length)];
 
           document.getElementById("span_note").innerHTML = note;
-          document.getElementById("span_interval").innerHTML = interval;
-          document.getElementById("span_direction").innerHTML = direction;
+          document.getElementById("span_triad").innerHTML = triad;
       });
     </script>
   </body>
