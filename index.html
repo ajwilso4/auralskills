@@ -65,18 +65,16 @@
         "A", "B", "C", "D", "E", "F", "G",
        "B#", "C#", "D#", "F#", "G#"
       ];
-      var triad = [
+      var triads = [
         "Major", "Minor", "Diminished", "Augmented"
         //TODO etc
       ];
-
       //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
       $("#button_one").on("click", function (e) {
           e.preventDefault();
           //Random element code c/o https://stackoverflow.com/a/4550514
           var note = notes [Math.floor(Math.random() * notes.length)];
-          var triad = triad [Math.floor(Math.random() * triad.length)];
-
+          var triad = triads [Math.floor(Math.random() * triads.length)];
           document.getElementById("span_note").innerHTML = note;
           document.getElementById("span_triad").innerHTML = triad;
       });
