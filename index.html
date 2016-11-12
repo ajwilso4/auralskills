@@ -8,7 +8,7 @@
     <meta name="description" content="Random elements selector">
     <meta name="author" content="Alex Nelson">
 
-    <title>Intervals quiz</title>
+    <title>Triads quiz</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,8 +31,8 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h2>Intervals quiz</h2>
-        <p class="lead">Click the button for the next interval.</p>
+        <h2>Triads quiz</h2>
+        <p class="lead">Click the button for the next triad.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button" id="button_one">Next</a></p>
         <noscript>
           <p><strong>Javascript must be enabled.</strong></p>
@@ -40,8 +40,7 @@
         <p>&nbsp;</p>
         <p>
           <span id="span_note">&nbsp;</span>
-          <span id="span_interval">&nbsp;</span>
-          <span id="span_direction">&nbsp;</span>
+          <span id="span_triad">&nbsp;</span>
         </p>
       </div>
 
@@ -62,29 +61,22 @@
     <script type="text/javascript src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
     <script type="text/javascript">
       var notes = [
-        "Ab", "Bb", "Cb", "Db", "Eb", "Fb", "Gb",
+        "Ab", "Bb", "Cb", "Db", "Eb", "Gb",
         "A", "B", "C", "D", "E", "F", "G",
-        "A#", "B#", "C#", "D#", "E#", "F#", "G#"
+       "B#", "C#", "D#", "F#", "G#"
       ];
-      var intervals = [
-        "P4", "P5"
+      var triads = [
+        "Major", "Minor", "Diminished", "Augmented"
         //TODO etc
       ];
-      var directions = [
-        "Up", "Down"
-      ];
-
       //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
       $("#button_one").on("click", function (e) {
           e.preventDefault();
           //Random element code c/o https://stackoverflow.com/a/4550514
           var note = notes [Math.floor(Math.random() * notes.length)];
-          var interval = intervals [Math.floor(Math.random() * intervals.length)];
-          var direction = directions [Math.floor(Math.random() * directions.length)];
-
+          var triad = triads [Math.floor(Math.random() * triads.length)];
           document.getElementById("span_note").innerHTML = note;
-          document.getElementById("span_interval").innerHTML = interval;
-          document.getElementById("span_direction").innerHTML = direction;
+          document.getElementById("span_triad").innerHTML = triad;
       });
     </script>
   </body>
