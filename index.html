@@ -69,10 +69,11 @@
       var triads = [
         "Major", "Minor", "Diminished", "Augmented" 
       ];
+       
       var inversions = [
-        "root position", "first inversion", "second inversion",
+        "root position", "first inversion", "second inversion"
       ];
-      //TODO etc
+      
       
       //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
       $("#button_one").on("click", function (e) {
@@ -81,6 +82,7 @@
           var note = notes [Math.floor(Math.random() * notes.length)];
           var triad = triads [Math.floor(Math.random() * triads.length)];
           var inversion = inversions [Math.floor(Math.random() * inversions.length)];
+          
           document.getElementById("span_note").innerHTML = note;
           document.getElementById("span_triad").innerHTML = triad;
           document.getElementByID("span_inversion").innerHTML = inversion;
