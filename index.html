@@ -8,7 +8,7 @@
     <meta name="description" content="Random elements selector">
     <meta name="author" content="Alex Nelson">
 
-    <title>Triad Inversions quiz</title>
+    <title>Seventh Chord quiz</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,8 +31,8 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h2>Triad Inversions quiz</h2>
-        <p class="lead">Click the button for the next triad and inversions.</p>
+        <h2>Seventh Chord quiz</h2>
+        <p class="lead">Click the button for the next triad.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button" id="button_one">Next</a></p>
         <noscript>
           <p><strong>Javascript must be enabled.</strong></p>
@@ -41,7 +41,6 @@
         <p>
           <span id="span_note">&nbsp;</span>
           <span id="span_triad">&nbsp;</span>
-          <span id="span_inversion">&nbsp;</span>
         </p>
       </div>
 
@@ -67,24 +66,17 @@
        "B#", "C#", "D#", "F#", "G#"
       ];
       var triads = [
-        "major", "minor", "diminished"
+        "MM", "Mm", "mm", "o7", "Ø7"
         //TODO etc
       ];
-      var inversions = [
-        "root", "first", "second"
-      ];
-
       //Bootstrap syntax example c/o: https://stackoverflow.com/a/12081745
       $("#button_one").on("click", function (e) {
           e.preventDefault();
           //Random element code c/o https://stackoverflow.com/a/4550514
           var note = notes [Math.floor(Math.random() * notes.length)];
           var triad = triads [Math.floor(Math.random() * triads.length)];
-          var inversion = inversions [Math.floor(Math.random() * inversions.length)];
-
           document.getElementById("span_note").innerHTML = note;
           document.getElementById("span_triad").innerHTML = triad;
-          document.getElementById("span_inversion").innerHTML = inversion;
       });
     </script>
   </body>
